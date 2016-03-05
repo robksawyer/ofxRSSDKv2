@@ -14,7 +14,6 @@ Copyright(c) 2013-2014 Intel Corporation. All Rights Reserved.
 #include "pxccapture.h"
 #include "pxcvideomodule.h"
 
-
 /** 
     The CaptureManager interface provides the following features:
     (1) Locate an I/O device that meets all module input needs.
@@ -74,9 +73,12 @@ public:
     */
     void __inline FilterByDeviceInfo(pxcCHAR *name, pxcCHAR *did, pxcI32 didx) {
         PXCCapture::DeviceInfo dinfo;
+        
         memset(&dinfo,0,sizeof(dinfo));
-        if (name) wcscpy_s<sizeof(dinfo.name)/sizeof(pxcCHAR)>(dinfo.name,name);
-        if (did) wcscpy_s<sizeof(dinfo.did)/sizeof(pxcCHAR)>(dinfo.did,did);
+        
+//        if (name) strlcpy<sizeof(dinfo.name)/sizeof(pxcCHAR)>(dinfo.name,name);
+//        if (did) strlcpy<sizeof(dinfo.did)/sizeof(pxcCHAR)>(dinfo.did,did);
+        
         dinfo.didx=didx;
         FilterByDeviceInfo(&dinfo);
     }
