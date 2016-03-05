@@ -76,8 +76,8 @@ public:
         
         memset(&dinfo,0,sizeof(dinfo));
         
-        if (name) wcslcpy<sizeof(dinfo.name)/sizeof(pxcCHAR)>(dinfo.name,name);
-        if (did) wcslcpy<sizeof(dinfo.did)/sizeof(pxcCHAR)>(dinfo.did,did);
+        if (name) wcslcpy(dinfo.name, name, sizeof(dinfo.name)/sizeof(pxcCHAR));
+        if (did) wcslcpy(dinfo.did, did, sizeof(dinfo.did)/sizeof(pxcCHAR));
         
         dinfo.didx=didx;
         FilterByDeviceInfo(&dinfo);

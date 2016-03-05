@@ -445,7 +445,7 @@ public:
         PXCSession::ImplDesc mdesc;
         memset(&mdesc,0,sizeof(mdesc));
         mdesc.cuids[0]=PXCFaceModule::CUID;
-        if (name) wcslcpy<sizeof(mdesc.friendlyName)/sizeof(pxcCHAR)>(mdesc.friendlyName, name);
+        if (name) wcslcpy(mdesc.friendlyName, name, sizeof(mdesc.friendlyName)/sizeof(pxcCHAR));
         return EnableModule(PXCFaceModule::CUID,&mdesc);
     }
 
@@ -481,7 +481,7 @@ public:
         PXCSession::ImplDesc mdesc;
         memset(&mdesc,0,sizeof(mdesc));
         mdesc.cuids[0]=PXCHandModule::CUID;
-        if (name) wcslcpy<sizeof(mdesc.friendlyName)/sizeof(pxcCHAR)>(mdesc.friendlyName, name);
+        if (name) wcslcpy(mdesc.friendlyName, name, sizeof(mdesc.friendlyName)/sizeof(pxcCHAR));
         return EnableModule(PXCHandModule::CUID,&mdesc);
     }
 
@@ -494,7 +494,7 @@ public:
         PXCSession::ImplDesc mdesc;
         memset(&mdesc,0,sizeof(mdesc));
         mdesc.cuids[0]=PXCBlobModule::CUID;
-        if (name) wcslcpy<sizeof(mdesc.friendlyName)/sizeof(pxcCHAR)>(mdesc.friendlyName, name);
+        if (name) wcslcpy(mdesc.friendlyName, name, sizeof(mdesc.friendlyName)/sizeof(pxcCHAR));
         return EnableModule(PXCBlobModule::CUID,&mdesc);
     }
 
@@ -517,7 +517,7 @@ public:
         PXCSession::ImplDesc mdesc;
         memset(&mdesc,0,sizeof(mdesc));
         mdesc.cuids[0]=PXC3DSeg::CUID;
-        if (name) wcslcpy<sizeof(mdesc.friendlyName)/sizeof(pxcCHAR)>(mdesc.friendlyName,name);
+        if (name) wcslcpy(mdesc.friendlyName, name, sizeof(mdesc.friendlyName)/sizeof(pxcCHAR));
         return EnableModule(PXC3DSeg::CUID,&mdesc);
     }
     
@@ -530,7 +530,7 @@ public:
         PXCSession::ImplDesc mdesc;
         memset(&mdesc,0,sizeof(mdesc));
         mdesc.cuids[0]=PXC3DScan::CUID;
-        if (name) wcslcpy<sizeof(mdesc.friendlyName)/sizeof(pxcCHAR)>(mdesc.friendlyName,name);
+        if (name) wcslcpy(mdesc.friendlyName, name, sizeof(mdesc.friendlyName)/sizeof(pxcCHAR));
         return EnableModule(PXC3DScan::CUID,&mdesc);
     }
 
@@ -542,7 +542,7 @@ public:
         PXCSession::ImplDesc mdesc;
         memset(&mdesc, 0, sizeof(mdesc));
         mdesc.cuids[0] = PXCScenePerception::CUID;
-        if (name) wcslcpy<sizeof(mdesc.friendlyName) / sizeof(pxcCHAR)>(mdesc.friendlyName, name);
+        if (name) wcslcpy(mdesc.friendlyName, name, sizeof(mdesc.friendlyName) / sizeof(pxcCHAR));
         return EnableModule(PXCScenePerception::CUID, &mdesc);
     }
 
